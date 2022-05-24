@@ -1,6 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SalleController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +19,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('clients', [ClientController::class, 'index'])->name('clients.index');
+    Route::resource('types', TypeController::class);
+    Route::resource('salles', SalleController::class);
+    Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
+    Route::get('users', [UserController::class, 'index']);
+});
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
