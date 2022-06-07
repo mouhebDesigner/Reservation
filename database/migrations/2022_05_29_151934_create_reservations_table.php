@@ -15,9 +15,11 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->string("raison");
-            $table->foreignId('user_id')->nullable()->constrained('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('salle_id')->nullable()->constrained('salles')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('raison');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('salle_id')->constrained('salles')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

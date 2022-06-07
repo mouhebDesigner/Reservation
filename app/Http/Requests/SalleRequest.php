@@ -24,8 +24,8 @@ class SalleRequest extends FormRequest
     public function rules()
     {
         return [
-            "numero" => "required",
-            "capacite" => "required",
+            "numero" => "required | numeric",
+            "capacite" => "required | numeric",
             "type_id" => "required"
         ];
     }

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('titre', 'Modifier etudiant')
+@section('titre', 'Modifier une salle')
 @section('content')
 <div class="wrapper">
     @include('includes.header')
@@ -8,7 +8,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Modifier un catégorie
+                Modifier une salle
             </h1>
         </section>
         <section class="content">
@@ -52,6 +52,15 @@
                                     <input type="text" class="form-control" name="capacite" value="{{ $salle->capacite }}" id="capacite"
                                         placeholder="Saisir numéro ">
                                     @error('capacite')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Image *<span
+                                            style="color: red">* </span> </label>
+                                    <input type="file" class="form-control" name="image" value="{{ old('image') }}" id="image"
+                                        placeholder="Saisir numéro ">
+                                    @error('image')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>

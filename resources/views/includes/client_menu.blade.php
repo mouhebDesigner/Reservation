@@ -11,11 +11,11 @@
         </a>
     </li>
 
-    <li class="nav-item @if(Request::is('conducteur/trajets*')) active @endif">
-        <a href="{{ url('conducteur/trajets') }}" class="nav-link ">
+    <li class="nav-item @if(Request::is('/salles*')) active @endif">
+        <a href="{{ url('/salles') }}" class="nav-link ">
             <i class="nav-icon fas fa-user"></i>
             <p>
-            Trajets
+            Salles
             <i class="right fas fa-angle-left"></i>
             </p>
         </a>

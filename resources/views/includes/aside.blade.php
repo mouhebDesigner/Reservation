@@ -43,7 +43,7 @@
         @include('includes.admin_menu')
         @else 
         
-        @include('includes.conducteur_menu')
+        @include('includes.client_menu')
         @endif
 
       </nav>

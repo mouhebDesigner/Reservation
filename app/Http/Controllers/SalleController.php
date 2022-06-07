@@ -29,6 +29,10 @@ class SalleController extends Controller
             Alert::success('Success Title', session('updated'));
         }
         $salles = Salle::paginate(10);
+        if(Auth::user()->isAdmin()){
+
+            return view('admin.salles.index', compact('salles'));
+        } 
 
         return view('salles.index', compact('salles'));
     }
@@ -40,7 +44,7 @@ class SalleController extends Controller
      */
     public function create()
     {
-        return view('salles.create');
+        return view('admin.salles.create');
     }
 
     /**
@@ -77,7 +81,7 @@ class SalleController extends Controller
     public function edit(Salle $salle)
     {
 
-        return view('salles.edit', compact('salle'));
+        return view('admin.salles.edit', compact('salle'));
     }
 
     /**

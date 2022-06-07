@@ -17,10 +17,18 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
+                "nom" => "client",
+                "prenom" => "client",
+                "email" => "client@gmail.com",
+                "numtel" => "12345678",
+                "role" => "client",
+                "password" => Hash::make("adminadmin"),
+            ],
+            [
                 "nom" => "admin",
                 "prenom" => "admin",
                 "email" => "admin@gmail.com",
-                "numtel" => "12345678",
+                "numtel" => "12345679",
                 "role" => "admin",
                 "password" => Hash::make("adminadmin"),
             ]

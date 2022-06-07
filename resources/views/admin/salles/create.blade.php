@@ -54,6 +54,15 @@
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="image">Image *<span
+                                            style="color: red">* </span> </label>
+                                    <input type="file" class="form-control" name="image" value="{{ old('image') }}" id="image"
+                                        placeholder="Saisir numéro ">
+                                    @error('image')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
                                 
                                
                             </div>

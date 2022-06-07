@@ -12,10 +12,17 @@ class Salle extends Model
     protected $fillable = [
         "numero",
         "capacite",
-        "type_id"
+        "type_id",
+        "image"
     ];
 
     public function type(){
         return $this->belongsTo(Type::class);
+    }
+
+    public function setImageAttribute($image){
+        if(request()->hasFile('image')){
+            $this->attributes['image'] = $image->store('images');
+        }
     }
 }
