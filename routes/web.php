@@ -25,6 +25,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('salles', SalleController::class);
     Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
     Route::get('users', [UserController::class, 'index']);
+    Route::get('users/{id}/valider', [UserController::class, 'valider']);
+    Route::get('users/{id}/refuser', [UserController::class, 'refuser']);
+
 });
 Route::get('salles', [SalleController::class, 'index'])->name('salles.index');
 Route::get('/', function () {

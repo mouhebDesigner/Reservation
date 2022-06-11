@@ -49,88 +49,32 @@
                                             @foreach($salles as $salle)
                                             <div class="col-md-6">
                                                 <!-- Box Comment -->
-                                                <div class="card card-widget collapsed-card">
-                                                    <div class="card-header">
-                                                        <div class="user-block">
-                                                            <span
-                                                                class="description">{{ $salle->created_at->diffForHumans() }}</span>
-                                                        </div>
-                                                        <!-- /.user-block -->
-                                                        <div class="card-tools d-flex">
-
-                                                           
-                                                        </div>
-                                                        <!-- /.card-tools -->
-                                                    </div>
-                                                    <!-- /.card-header -->
-                                                    <div class="card-body" style="display: none;">
-
-                                                        <!-- post text -->
+                                                <div class="card card-widget">
+                                                    <div class="card-body">
+                                                        <img class="img-fluid pad" src="{{ asset($salle->image) }}"
+                                                            alt="Photo">
                                                         <p>
-                                                            {{ $salle->description }}
+                                                            {{$salle->description}}
+                                                            <br>
+                                                            <h2>Autre information:</h2>
+                                                            <span>
+                                                                Capactié: 
+                                                                {{ $salle->capacite }}
+                                                                
+                                                            </span><br>
+                                                            <span>
+                                                                Numéro:
+                                                                {{ $salle->numero }}
+                                                            </span><br>
+                                                            <span>
+                                                                Type: 
+                                                                {{ $salle->type->libelle }}
+                                                            </span>
+
                                                         </p>
-
-                                                        <span
-                                                            class="float-right text-muted">{{ $salle->commentaires->count() }}
-                                                            commentaires</span>
+                                                        <button type="button"
+                                                            class="float-right  btn btn-primary btn-sm">Reserver</button>
                                                     </div>
-                                                    <!-- /.card-body -->
-                                                    <div class="card-footer card-comments" style="display: none;">
-                                                        @foreach($salle->commentaires as $comment)
-                                                        <!-- /.card-comment -->
-                                                        <div class="card-comment">
-                                                            <!-- User image -->
-                                                            <img class="img-circle img-sm"
-                                                                src="{{ asset('storage/'.App\Models\User::find($comment->user_id)->photo) }}"
-                                                                alt="User Image">
-
-                                                            <div class="comment-text">
-                                                                <span class="username">
-
-                                                                    <span
-                                                                        class="text-muted float-right">{{ $comment->created_at->diffForHumans() }}</span>
-                                                                </span><!-- /.username -->
-                                                                {{ $comment->contenue }}
-                                                                <form action="{{ url('commentaires/'.$comment->id) }}"
-                                                                    method="post" class="form_comment">
-                                                                    @csrf
-                                                                    @method('delete')
-                                                                    <button type="submit" class="btn-delete"
-                                                                        style="background: transparent"
-                                                                        onclick="return confirm('Voules-vous supprimer ce forum')">
-                                                                        <i class="fa fa-trash"
-                                                                            style="transform: scale(1)"></i>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                            <!-- /.comment-text -->
-                                                        </div>
-                                                        @endforeach
-                                                        <!-- /.card-comment -->
-                                                    </div>
-                                                    <!-- /.card-footer -->
-                                                    <div class="card-footer" style="display: none;">
-                                                        <form action="{{ url('commentaires') }}" class="" method="post">
-                                                            @csrf
-                                                            <input type="hidden" value="{{ $salle->id }}"
-                                                                name="forum_id">
-
-                                                            <img class="img-fluid img-circle img-sm"
-                                                                src="{{ asset('storage/'.Auth::user()->photo) }}"
-                                                                alt="Alt Text">
-                                                            <!-- .img-push is used to add margin to elements next to floating images -->
-                                                            <div class="img-push d-flex">
-                                                                <input type="text" name="message"
-                                                                    class="form-control form-control-sm"
-                                                                    placeholder="Saisir votre commentaire">
-                                                                <button type="submit"
-                                                                    style="border: none; background: transparent">
-                                                                    <i class="fa fa-share"></i>
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <!-- /.card-footer -->
                                                 </div>
                                                 <!-- /.card -->
                                             </div>

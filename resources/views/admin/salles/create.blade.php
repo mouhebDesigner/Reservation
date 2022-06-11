@@ -45,12 +45,22 @@
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
+                                
                                 <div class="form-group">
                                     <label for="capacite">Capacité *<span
                                             style="color: red">* </span> </label>
                                     <input type="text" class="form-control" name="capacite" value="{{ old('capacite') }}" id="capacite"
-                                        placeholder="Saisir numéro ">
+                                        placeholder="Saisir capacité ">
                                     @error('capacite')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description * <span
+                                            style="color: red">* </span> </label>
+                                    <textarea cols="10" rows="7" class="form-control" name="description" value="{{ old('description') }}" id="description"
+                                        placeholder="Saisir description... ">{{ old('description') }}</textarea>
+                                    @error('description')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>

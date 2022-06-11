@@ -76,7 +76,21 @@
                                                             <td>{{ $user->email }}</td>
                                                             <td>{{ $user->numtel }}</td>
                                                             <td>
+                                                                @if($user->approuver == null)
+                                                                <a href="{{ url('admin/users/'.$user->id.'/valider') }}" class="btn btn-success"  onclick="
+                                                                        return confirm('Voulez-vous valider cet utilisateur');
+                                                                    ">Valider</a>
+                                                                <a href="{{ url('admin/users/'.$user->id.'/refuser') }}" class="btn btn-danger"  onclick="
+                                                                        return confirm('Voulez-vous refuser cet utilisateur');
+                                                                    ">Refuser</a>
+                                                                @endif
                                                                 
+                                                                @if($user->approuver == true)
+                                                                    Compte validé
+                                                                @else 
+                                                                    Compte refusé
+                                                                @endif
+                                                                    
                                                             </td>
                                                         </tr>
                                                     @endforeach

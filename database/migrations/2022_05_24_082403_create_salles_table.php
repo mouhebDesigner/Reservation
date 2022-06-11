@@ -18,6 +18,7 @@ class CreateSallesTable extends Migration
             $table->integer('numero');
             $table->integer('capacite');
             $table->string('image');
+            $table->text('description');
             $table->foreignId('type_id')->nullable()->constrained('types')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

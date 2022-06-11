@@ -56,6 +56,15 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="description">Description * <span
+                                            style="color: red">* </span> </label>
+                                    <textarea cols="10" rows="7" class="form-control" name="description" value="{{ $salle->description }}" id="description"
+                                        placeholder="Saisir description... ">{{ old('description') }}</textarea>
+                                    @error('description')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <label for="image">Image *<span
                                             style="color: red">* </span> </label>
                                     <input type="file" class="form-control" name="image" value="{{ old('image') }}" id="image"

@@ -62,9 +62,7 @@
                                                         <th>
                                                             Numéro de téléphone
                                                         </th>
-                                                        <th>
-                                                            Action
-                                                        </th>
+                                                        
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -75,9 +73,7 @@
                                                             <td>{{ $client->prenom }}</td>
                                                             <td>{{ $client->email }}</td>
                                                             <td>{{ $client->numtel }}</td>
-                                                            <td>
-                                                                
-                                                            </td>
+                                                           
                                                         </tr>
                                                     @endforeach
                                                 </tbody>

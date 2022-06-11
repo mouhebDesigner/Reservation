@@ -12,6 +12,13 @@
         
     </div>              
 @endif
+@if(session('valider'))
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4> {{ session('valider') }}	</h4>
+        
+    </div>              
+@endif
 @if(session('updated'))
     <div class="alert alert-info alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -23,6 +30,13 @@
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <h4> {{ session('deleted') }}	</h4>
+        
+    </div>              
+@endif
+@if(session('refuser'))
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4> {{ session('refuser') }}	</h4>
         
     </div>              
 @endif

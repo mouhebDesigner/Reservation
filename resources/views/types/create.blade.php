@@ -29,7 +29,7 @@
                                     <label for="libelle">Libellé * <span
                                             style="color: red">* </span> </label>
                                     <input type="text" class="form-control" name="libelle" value="{{ old('libelle') }}" id="libelle"
-                                        placeholder="Saisir numéro ">
+                                        placeholder="Saisir libellé ">
                                     @error('libelle')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
