@@ -48,7 +48,7 @@
         </a>
     </li>
     <li class="nav-item @if(Request::is('admin/reservations*')) active @endif">
-        <a href="{{ url('admin/trajets') }}" class="nav-link ">
+        <a href="{{ url('admin/reservations') }}" class="nav-link ">
             <i class="nav-icon fas fa-user"></i>
             <p>
             Reservations
