@@ -24,7 +24,7 @@
         <a href="{{ url('admin/clients') }}" class="nav-link ">
             <i class="nav-icon fas fa-user"></i>
             <p>
-            Clients
+            Comptes
             <i class="right fas fa-angle-left"></i>
             </p>
         </a>

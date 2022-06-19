@@ -45,7 +45,7 @@
         </a>
       </li>
       <li class="nav-item">
-         <a class="dropdown-item" style="color: white" href="{{ route('logout') }}"
+         <a class="dropdown-item" style="color: black" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
             {{ __('Déconnecter') }}

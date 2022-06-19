@@ -15,10 +15,10 @@ class CreateSallesTable extends Migration
     {
         Schema::create('salles', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero');
+            $table->integer('numero')->unique();
             $table->integer('capacite');
             $table->string('image');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->foreignId('type_id')->nullable()->constrained('types')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

@@ -14,7 +14,15 @@ class Reservation extends Model
         "date_debut",
         "date_fin",
         "user_id",
-        "salle_id"
+        "salle_id",
+        "status"
     ];
 
+    public function salle(){
+        return $this->belongsTo(Salle::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

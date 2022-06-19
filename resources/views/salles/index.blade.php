@@ -72,8 +72,7 @@
                                                             </span>
 
                                                         </p>
-                                                        <button type="button"
-                                                            class="float-right  btn btn-primary btn-sm">Reserver</button>
+                                                        <a href="{{ url('salles/'.$salle->id."/reserver") }}" class="float-right  btn btn-primary btn-sm">Réserver</a>
                                                     </div>
                                                 </div>
                                                 <!-- /.card -->

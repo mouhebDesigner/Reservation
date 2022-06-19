@@ -30,6 +30,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 });
 Route::get('salles', [SalleController::class, 'index'])->name('salles.index');
+Route::get('salles/{id}/reserver', [ReservationController::class, 'create']);
+Route::post('reserver', [ReservationController::class, 'store']);
+Route::put('reservation/{reservation}/annuler', [ReservationController::class,'annuler'])->name('reservations.annuler');
+Route::put('reservation/{reservation}/accepter', [ReservationController::class,'accepter'])->name('reservations.accepter');
+Route::put('reservation/{reservation}/refuser', [ReservationController::class,'refuser'])->name('reservations.refuser');
+Route::get('reservations', [ReservationController::class,'index'])->name('reservations.index');
 Route::get('/', function () {
     return view('auth.login');
 });

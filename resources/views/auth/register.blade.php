@@ -161,7 +161,7 @@
                 </p>
                 <p class="mb-0">
                     Avez-vous déjà un compte ?
-                    <a href="{{ route('register') }}" class="text-center"> Connectez-vous</a>
+                    <a href="{{ route('login') }}" class="text-center"> Connectez-vous</a>
 
                 </p>
             </div>

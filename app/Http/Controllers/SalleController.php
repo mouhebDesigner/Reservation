@@ -114,7 +114,7 @@ class SalleController extends Controller
         $salle->delete();
         
         return response()->json([
-            "deleted" => "salle à été supprimé"
+            "deleted" => "salle a été supprimée"
         ]);
     }
 }

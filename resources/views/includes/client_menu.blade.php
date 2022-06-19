@@ -21,8 +21,8 @@
         </a>
     </li>
    
-    <li class="nav-item @if(Request::is('conducteur/conducteurs*')) active @endif">
-        <a href="{{ url('conducteur/conducteurs') }}" class="nav-link ">
+    <li class="nav-item @if(Request::is('reservations*')) active @endif">
+        <a href="{{ url('/reservations') }}" class="nav-link ">
             <i class="nav-icon fas fa-user"></i>
             <p>
             Réservations

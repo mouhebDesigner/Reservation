@@ -51,4 +51,7 @@ class User extends Authenticatable
     public function isClient(){
         return Auth::user()->role == "client";
     }
+    public function reservations(){
+        return $this->hasMany(Reservation::class);
+    }
 }

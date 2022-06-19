@@ -33,7 +33,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="d-flex justify-content-between">
-                                            <h3 class="m-0">Liste des comptes</h3>
+                                            <h3 class="m-0">Liste des réservation</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -51,34 +51,63 @@
                                                             #
                                                         </th>
                                                         <th>
-                                                            Nom
+                                                            Numéro
                                                         </th>
                                                         <th>
-                                                            Prenom
+                                                            Capacité
                                                         </th>
                                                         <th>
-                                                            Email
+                                                            Type de salle
                                                         </th>
                                                         <th>
-                                                            Numéro de téléphone
+                                                            Date début
                                                         </th>
-                                                        
+                                                        <th>
+                                                            Date fin
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                        <th>
+                                                            Action
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($clients as $client)
+                                                    @foreach($reservations as $reservation)
                                                         <tr>
-                                                            <td>{{ $client->id }}</td>
-                                                            <td>{{ $client->nom }}</td>
-                                                            <td>{{ $client->prenom }}</td>
-                                                            <td>{{ $client->email }}</td>
-                                                            <td>{{ $client->numtel }}</td>
-                                                           
+                                                            <td>{{ $reservation->id }}</td>
+                                                            <td>{{ $reservation->salle->numero }}</td>
+                                                            <td>{{ $reservation->salle->capacite }}</td>
+                                                            <td>{{ $reservation->salle->type->libelle }}</td>
+                                                            <td>{{ $reservation->date_debut }}</td>
+                                                            <td>{{ $reservation->date_fin }}</td>
+                                                            <td>{{ $reservation->status }}</td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-around w-100">
+                                                                    
+                                                                    @if(Auth::user()->isAdmin())
+                                                                        <a   href="{{ route('reservations.accepter', ['reservation'=>$reservation]) }}" title="Accepter réservation" class=" accepter-confirm"  data-model="reservation" >
+                                                                            <i class="fas fa-check-square accept-reservation"></i>
+                                                                        </a>
+
+                                                                        <a   href="{{ route('reservations.refuser', ['reservation'=>$reservation]) }}" title="Réfuser réservation" class=" refuser-confirm"  data-model="reservation" >
+                                                                            <i class="fas fa-times-circle close-reservation"></i>
+                                                                        </a>
+                                                                    @else 
+
+                                                                        <a  @if($reservation->status == "annuler") role="link" aria-disabled="true" class="btn-edit" @else href="{{ route('reservations.annuler', ['reservation'=>$reservation]) }}" class="btn-edit annuler-confirm" @endif data-model="reservation"  style="width: 100%">
+                                                                            Annuler
+                                                                        </a>
+                                                                    @endif
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>
                                             <div class="d-flex justify-content-center">
+                                                {{ $reservations->links() }}
                                             </div>
                                         </div>
                                     </div>
