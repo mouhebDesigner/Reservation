@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @if(Auth::user()->isClient())
+        <link rel="stylesheet" href="{{ asset('assets/css/client.css') }}">
+    @endif
     @yield('css')
 
 </head>

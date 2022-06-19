@@ -1,0 +1,40 @@
+[class*=sidebar-dark-] {
+    background-color: #3b5fcf;
+}
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
+    background-color: #3b5fcf;
+}
+.navbar-dark {
+    background-color: #fdfeff;
+    border-color: #4b545c;
+    color: black !important;
+}
+[class*=sidebar-dark] .btn-sidebar, [class*=sidebar-dark] .form-control-sidebar {
+    background-color: #41917b;
+    border: 1px solid #62c8ac;
+    color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(51 38 38 / 75%);
+}
+.main-sidebar, .main-sidebar::before {
+    transition: margin-left .3s ease-in-out,width .3s ease-in-out;
+    width: 290px;
+}
+
+@media (min-width: 768px){
+    body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header 
+    {
+        transition: margin-left .3s ease-in-out;
+        margin-left: 290px;
+    }
+}
+
+.layout-navbar-fixed .wrapper .brand-link {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transition: width .3s ease-in-out;
+    width: 290px;
+    z-index: 1035;
+}
