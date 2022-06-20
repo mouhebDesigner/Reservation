@@ -84,10 +84,9 @@
                                                                         return confirm('Voulez-vous refuser cet utilisateur');
                                                                     ">Refuser</a>
                                                                 @endif
-                                                                
                                                                 @if($user->approuver == true)
                                                                     Compte validé
-                                                                @else 
+                                                                @elseif(!is_null($user->approuver))
                                                                     Compte refusé
                                                                 @endif
                                                                     
