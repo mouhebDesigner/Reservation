@@ -33,6 +33,13 @@
         
     </div>              
 @endif
+@if(session('reserved'))
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4> {{ session('reserved') }}	</h4>
+        
+    </div>              
+@endif
 @if(session('refuser'))
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

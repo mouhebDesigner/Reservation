@@ -94,3 +94,10 @@ td div button:hover, td div a:hover, .card-tools button:hover, .card-tools a:hov
     transform: scale(1.5);
 
 }
+.content-wrapper{
+    
+        background-image: url("../images/office.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        
+}

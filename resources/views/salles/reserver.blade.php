@@ -13,6 +13,11 @@
         </section>
         <section class="content">
             <div class="row">
+                <div class="col">
+                    @include('includes.error-message')
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
 
                     <div class="card card-primary">
@@ -38,7 +43,7 @@
                                 <div class="form-group">
                                     <label for="date_debut">Date début<span
                                             style="color: red">* </span> </label>
-                                    <input type="date" class="form-control" name="date_debut" value="{{ old('date_debut') }}" id="date_debut"
+                                    <input type="datetime-local" class="form-control" name="date_debut" value="{{ old('date_debut') }}" id="date_debut"
                                         placeholder="Saisir capacité ">
                                     @error('date_debut')
                                     <p class="text-danger">{{ $message }}</p>
@@ -47,7 +52,7 @@
                                 <div class="form-group">
                                     <label for="date_fin">Date fin<span
                                             style="color: red">* </span> </label>
-                                    <input type="date" class="form-control" name="date_fin" value="{{ old('date_fin') }}" id="date_fin">
+                                    <input type="datetime-local" class="form-control" name="date_fin" value="{{ old('date_fin') }}" id="date_fin">
                                     @error('date_fin')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror

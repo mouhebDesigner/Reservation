@@ -58,6 +58,13 @@
             }(w, d, 0, "script");
         })(window, document);
     </script>
+    <style>
+        .login-page{
+        background-image: url("{{ asset('assets/images/conferenceroom.jpg') }}");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">

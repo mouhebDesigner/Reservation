@@ -22,6 +22,29 @@
     @if(Auth::user()->isClient())
         <link rel="stylesheet" href="{{ asset('assets/css/client.css') }}">
     @endif
+    <style>
+        .main-sidebar, .main-sidebar::before {
+            transition: margin-left .3s ease-in-out,width .3s ease-in-out;
+            width: 290px;
+        }
+
+        @media (min-width: 768px){
+            body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header 
+            {
+                transition: margin-left .3s ease-in-out;
+                margin-left: 290px;
+            }
+        }
+
+        .layout-navbar-fixed .wrapper .brand-link {
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            transition: width .3s ease-in-out;
+            width: 290px;
+            z-index: 1035;
+        }
+    </style>
     @yield('css')
 
 </head>
