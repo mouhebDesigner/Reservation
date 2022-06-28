@@ -34,7 +34,6 @@
                                     <div class="col-md-12">
                                         <div class="d-flex justify-content-between">
                                             <h3 class="m-0">Liste des salles</h3>
-
                                         </div>
                                     </div>
                                 </div>
@@ -67,10 +66,13 @@
                                                                 {{ $salle->numero }}
                                                             </span><br>
                                                             <span>
+                                                                Prix (par heure):
+                                                                {{ $salle->prix }}DT
+                                                            </span><br>
+                                                            <span>
                                                                 Type: 
                                                                 {{ $salle->type->libelle }}
                                                             </span>
-
                                                         </p>
                                                         <a href="{{ url('salles/'.$salle->id."/reserver") }}" class="float-right  btn btn-primary btn-sm">Réserver</a>
                                                     </div>

@@ -60,6 +60,9 @@
                                                             Capacité
                                                         </th>
                                                         <th>
+                                                            Prix par heure
+                                                        </th>
+                                                        <th>
                                                             Type de salle
                                                         </th>
                                                         <th>
@@ -73,6 +76,7 @@
                                                             <td>{{ $salle->id }}</td>
                                                             <td>{{ $salle->numero }}</td>
                                                             <td>{{ $salle->capacite }}</td>
+                                                            <td>{{ $salle->prix }}</td>
                                                             <td>{{ $salle->type->libelle }}</td>
                                                             <td>
                                                                 <div class="d-flex justify-content-around">

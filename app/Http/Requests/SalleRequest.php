@@ -27,7 +27,8 @@ class SalleRequest extends FormRequest
             "numero" => "required | numeric | unique:salles",
             "capacite" => "required | numeric",
             "type_id" => "required",
-            "image" => "required"
+            "image" => "required",
+            "prix" => "required"
         ];
     }
 }

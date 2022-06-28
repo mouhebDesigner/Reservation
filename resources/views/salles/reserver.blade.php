@@ -57,6 +57,16 @@
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="date_fin">Montant total</label>
+                                    <br>
+                                    <span class="montant" data-price="{{ App\Models\Salle::find($salle_id)->prix }}">
+                                        {{ App\Models\Salle::find($salle_id)->prix }}
+                                    </span>
+                                    DT
+                                    <input type="hidden" name="montant" value="{{ App\Models\Salle::find($salle_id)->prix }}">
+                                    <input type="hidden" name="nbr_heures">
+                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
@@ -73,8 +83,33 @@
 
 
 
-    @endsection
-    @section('script')
-   
+@endsection
+@section('script')
+    <script>
+        function diff_hours(date_debut, date_fin) 
+        {
 
-    @endsection
+            var diff =(date_fin.getTime() - date_debut.getTime()) / 1000;
+            diff /= (60 * 60);
+            return Math.abs(Math.round(diff));
+        
+        }
+
+        date_debut,date_fin;
+
+        $("input[name=date_debut]").on('change', function(){
+            date_debut = new Date($(this).val());
+        });
+        $("input[name=date_fin]").on('change', function(){
+            date_fin = new Date($(this).val()); 
+            $(".montant").text(Number($(".montant").data('price')) * Number(diff_hours(date_debut, date_fin)));
+            $("input[name=montant]").val(Number($(".montant").data('price')) * Number(diff_hours(date_debut, date_fin)));
+            $("input[name=nbr_heures]").val(diff_hours(date_debut, date_fin));
+        });
+
+
+
+        
+    </script>
+
+@endsection

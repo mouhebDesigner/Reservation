@@ -43,3 +43,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('test', function () {
+
+    $user = [
+        'name' => 'Harsukh Makwana',
+        'info' => 'Laravel & Python Devloper'
+    ];
+
+    \Mail::to('fatm@gmail.com')->send(new \App\Mail\NewMail($user));
+
+    dd("success");
+});

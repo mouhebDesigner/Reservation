@@ -15,7 +15,9 @@ class Reservation extends Model
         "date_fin",
         "user_id",
         "salle_id",
-        "status"
+        "status",
+        "montant",
+        "nbr_heures"
     ];
 
     public function salle(){

@@ -66,6 +66,12 @@
                                                             Date fin
                                                         </th>
                                                         <th>
+                                                            Nombre d'heure
+                                                        </th>
+                                                        <th>
+                                                            Montant
+                                                        </th>
+                                                        <th>
                                                             Status
                                                         </th>
                                                         <th>
@@ -82,6 +88,8 @@
                                                             <td>{{ $reservation->salle->type->libelle }}</td>
                                                             <td>{{ $reservation->date_debut }}</td>
                                                             <td>{{ $reservation->date_fin }}</td>
+                                                            <td>{{ $reservation->nbr_heures }}</td>
+                                                            <td>{{ $reservation->montant }}DT</td>
                                                             <td>{{ $reservation->status }}</td>
                                                             <td>
                                                                 <div class="d-flex justify-content-around w-100">

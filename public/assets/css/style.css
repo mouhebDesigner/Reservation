@@ -101,8 +101,6 @@ td div button:hover, td div a:hover, .card-tools button:hover, .card-tools a:hov
         background-repeat: no-repeat;
         
 }
-
-
 .card {
     position: relative;
     display: -ms-flexbox;

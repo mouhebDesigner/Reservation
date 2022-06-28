@@ -18,6 +18,8 @@ class CreateReservationsTable extends Migration
             $table->string('raison');
             $table->dateTime('date_debut');
             $table->dateTime('date_fin');
+            $table->integer('montant');
+            $table->integer('nbr_heures');
             $table->enum('status', ['attente', 'accepter', 'refuser', 'annuler']);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('salle_id')->constrained('salles')->onDelete('cascade')->onUpdate('cascade');

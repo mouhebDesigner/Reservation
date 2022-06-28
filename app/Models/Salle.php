@@ -14,7 +14,8 @@ class Salle extends Model
         "capacite",
         "type_id",
         "image",
-        "description"
+        "description",
+        "prix"
     ];
 
     public function type(){

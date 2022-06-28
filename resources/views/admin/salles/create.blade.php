@@ -25,7 +25,7 @@
                             @csrf
                             <div class="card-body" id="inputs">
                                 <div class="form-group @error('matiere_id') has-error @enderror">
-                                    <label for="type_id"> Choisir type * </label>
+                                    <label for="type_id"> Choisir type </label>
                                     <select name="type_id" class="form-control" id="type_id">
                                         <option value="" disabled selected> Choisir type de salle</option>
                                         @foreach(App\Models\Type::all() as $type)
@@ -37,7 +37,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="numero">Numéro * <span
+                                    <label for="numero">Numéro <span
                                             style="color: red">* </span> </label>
                                     <input type="text" class="form-control" name="numero" value="{{ old('numero') }}" id="numero"
                                         placeholder="Saisir numéro ">
@@ -47,7 +47,7 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="capacite">Capacité *<span
+                                    <label for="capacite">Capacité<span
                                             style="color: red">* </span> </label>
                                     <input type="text" class="form-control" name="capacite" value="{{ old('capacite') }}" id="capacite"
                                         placeholder="Saisir capacité ">
@@ -56,7 +56,16 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">Description * <span
+                                    <label for="prix">Prix (Par Heure)<span
+                                            style="color: red">* </span> </label>
+                                    <input type="text" class="form-control" name="prix" value="{{ old('prix') }}" id="prix"
+                                        placeholder="Saisir prix (par heure) ">
+                                    @error('prix')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description <span
                                             style="color: red">* </span> </label>
                                     <textarea cols="10" rows="7" class="form-control" name="description" value="{{ old('description') }}" id="description"
                                         placeholder="Saisir description... ">{{ old('description') }}</textarea>
@@ -65,7 +74,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Image *<span
+                                    <label for="image">Image<span
                                             style="color: red">* </span> </label>
                                     <input type="file" class="form-control" name="image" value="{{ old('image') }}" id="image"
                                         placeholder="Saisir numéro ">

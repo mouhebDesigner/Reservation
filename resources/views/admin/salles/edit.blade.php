@@ -43,16 +43,24 @@
                                     <input type="text" class="form-control" name="numero" value="{{ $salle->numero }}" id="numero"
                                         placeholder="Saisir numéro ">
                                     @error('numero')
-                                    <p class="text-danger">{{ $message }}</p>
+                                        <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="capacite">Numéro <span
+                                    <label for="capacite">Capacité <span
                                             style="color: red">* </span> </label>
                                     <input type="text" class="form-control" name="capacite" value="{{ $salle->capacite }}" id="capacite"
                                         placeholder="Saisir numéro ">
                                     @error('capacite')
-                                    <p class="text-danger">{{ $message }}</p>
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="prix">Prix (Par Heure) <span style="color: red">* </span> </label>
+                                    <input type="text" class="form-control" name="prix" value="{{ $salle->prix }}" id="prix"
+                                        placeholder="Saisir prix">
+                                    @error('prix')
+                                        <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
